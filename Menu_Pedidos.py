@@ -8,8 +8,6 @@ class RepeatTimer(Timer):
             self.function(*self.args, **self.kwargs)
 
 
-
-
 class Productos:
     def __init__(self, id, producto, precio, stock):
         self.id=id
@@ -49,7 +47,17 @@ class Colas:
     def agregar_cola_pendiente(self,pedidos):
         self.cola_pendiente.put(pedidos)
     def agregar_cola_preparacion(self):
-        self.cola_preparacion="S"
+        if not self.cola_pendiente.empty():
+            pedido_preparar = self.cola_pendiente.get()
+            self.cola_preparacion.put(pedido_preparar)
+        else:
+            print("No hay pedidos pendientes")
+    def agregar_cola_listo(self):
+        if not self.cola_preparacion.empty():
+            a=self.cola_preparacion.get()
+            self.cola_listo_servir.put(a)
+        else:
+            print("No hay pedidos en preparacion")
 
 modi_pizza=ModificacionPizza()
 modi_bebida=ModificacionBebida()
@@ -141,26 +149,23 @@ while True:
         print("Pedidos pendientes")
         pedido_pendiente=list(colas.cola_pendiente.queue)
         for i, pedido in enumerate(pedido_pendiente):
-            print(f"{i+1}. {pedido[0]} Q{pedido[1]}")
+            print(f"    {i+1}. {pedido[0]} Q{pedido[1]}")
         print("Pedidos en preparacion")
         pedido_preparacion=list(colas.cola_preparacion.queue)
         for i, pedido in enumerate(pedido_preparacion):
-            print(f"{i+1}. {pedido[0]} Q{pedido[1]}")
+            print(f"    {i+1}. {pedido[0]} Q{pedido[1]}")
         print("Pedidos listos")
         pedido_listo=list(colas.cola_listo_servir.queue)
         for i, pedido in enumerate(pedido_listo):
-            print(f"{i+1}. {pedido[0]} Q{pedido[1]}")
+            print(f"    {i+1}. {pedido[0]} Q{pedido[1]}")
         preparar=input("1. Si\n2. No\nDesea preparar algun pedido: ")
         if preparar=="1":
-            if not colas.cola_pendiente.empty():
-                pedido_preparar=colas.cola_pendiente.get()
-                colas.cola_preparacion.put(pedido_preparar)
-            else:
-                print("No hay pedidos pendientes")
+            colas.agregar_cola_preparacion()
         elif preparar=="2":
             print("No se prepararan pedidos")
         else:
             print("Opcion invalida")
+
 
     elif opcion=="4":
         print("Cerrando el programa...")
