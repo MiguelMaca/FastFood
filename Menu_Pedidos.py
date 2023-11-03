@@ -56,6 +56,7 @@ class Colas:
         if not self.cola_preparacion.empty():
             a=self.cola_preparacion.get()
             self.cola_listo_servir.put(a)
+            print("El producto esta listo")
         else:
             print("No hay pedidos en preparacion")
 
@@ -165,6 +166,8 @@ while True:
             print("No se prepararan pedidos")
         else:
             print("Opcion invalida")
+
+
 
 
     elif opcion=="4":
