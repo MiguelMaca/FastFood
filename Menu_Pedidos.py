@@ -57,8 +57,7 @@ class Colas:
             a=self.cola_preparacion.get()
             self.cola_listo_servir.put(a)
             print("El producto esta listo")
-        else:
-            print("No hay pedidos en preparacion")
+
 
 modi_pizza=ModificacionPizza()
 modi_bebida=ModificacionBebida()
@@ -97,8 +96,8 @@ modi_complemento.agregar_complemento(complemento)
 
 
 colas=Colas()
-
-
+timer=RepeatTimer(22,colas.agregar_cola_listo)
+timer.start()
 while True:
     print("--Interfaz--")
     print("1. Mostar el menu\n2. Comprar\n3. Pedidos\n4. Salir")
@@ -167,11 +166,9 @@ while True:
         else:
             print("Opcion invalida")
 
-
-
-
     elif opcion=="4":
         print("Cerrando el programa...")
+        timer.cancel()
         break
     else:
         print("Opcion invalida")
