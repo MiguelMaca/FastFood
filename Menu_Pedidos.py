@@ -136,13 +136,13 @@ while True:
                     print(pedido)
                     colas.agregar_cola_pendiente(pedido)
         elif compra=="3":
-            for pizza in  modi_pizza.pila_pizza:
-                print(f"{pizza.id}. Producto: {pizza.producto}")
-            pizza_comprar=int(input("Que pizza quiere comprar: "))
-            for pizza in  modi_pizza.pila_pizza:
-                if pizza_comprar==pizza.id:
-                    pizza.stock=pizza.stock-1
-                    pedido=pizza.producto,pizza.precio
+            for complemento in  modi_complemento.pila_complemento:
+                print(f"{complemento.id}. Producto: {complemento.producto}")
+            complemento_comprar=int(input("Que pizza quiere comprar: "))
+            for complemento in  modi_complemento.pila_complemento:
+                if complemento_comprar==complemento.id:
+                    complemento.stock=complemento.stock-1
+                    pedido=complemento.producto,complemento.precio
                     print(pedido)
                     colas.agregar_cola_pendiente(pedido)
     elif opcion=="3":
