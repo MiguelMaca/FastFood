@@ -183,20 +183,13 @@ while True:
                     modo = input('1.- Pago con tarjeta \n 2.- Pago en efectivo \n Por favor, elija su forma de pago: ')
                     if modo == '1':
                         iva = (total * 0.12)+total
-                        print(f'Subtotal a pagar: {total} \n Total a pagar (con IVA incluido): '
+                        print(f'{compra_factura} \n Subtotal a pagar: {total} \n Total a pagar (con IVA incluido): '
                               f'{iva} \n Pago con tarjeta')
                     elif modo == '2':
                         iva = (total * 0.12)+total
-                        print(f'Subtotal a pagar: {total} \n Total a pagar (con IVA incluido): '
+                        print(f'{compra_factura} \n Subtotal a pagar: {total} \n Total a pagar (con IVA incluido): '
                               f'{iva} \n Pago con efectivo')
-                #Aqui continuas casta
-                #el subtotal es el total que me dio hueva cambiarla
-                #hacer un menu de dos opciones si es cf o con factura
-                #si pide factura hacer otro menu si paga con efectivo o con tarjeta
-                #Si pide codigo de seguridad
-                #pedis nombre, apellido, nit, direccion
-                #poner los datos del cliente en una pila para ofrecer promociones
-                #sacas el iva e imprimis la compra_factura para mostrar la compra del cliente y los totales
+
 
     elif opcion=="3":
         print("Pedidos pendientes")
