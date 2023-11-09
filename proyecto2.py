@@ -124,192 +124,197 @@ while True:
     Salir_Administrador=False
     usuario=input("Ingresar como: \n1. Administrador\n2. Usuario\n3. Salir programa\nIngrese opcion: ")
     if usuario=="1":
-        print("Usted a ingresado como administrador")
-        while not Salir_Administrador:
-            print("1. Agregar productos\n2. Modificar productos\n3. Ver clientes guardos\n4. Salir")
-            opcion=input("Que desea escoger: ")
-            if opcion=="1":
-                seguir_agregando=False
-                while not seguir_agregando:
-                    print("Opciones a agregar:\n1. Pizza\n2. Bebidas\n3. Complementos")
-                    opcion_agregar=input("Que desea agregar: ")
-                    if opcion_agregar=="1":
-                        id_pizza=id_pizza+1
-                        produc=input("Que clase de pizza quiere agregar: ")
-                        exepcion=False
-                        while not exepcion:
-                            try:
-                                preci=int(input("Que precio va a tener la pizza: "))
-                            except ValueError:
-                                print("Solo pueden ir numeros en este apartado")
-                            else:
-                                exepcion=True
-                        exepcion = False
-                        while not exepcion:
-                            try:
-                                cantidad = int(input("Que cantidad tendra: "))
-                            except ValueError:
-                                print("Solo pueden ir numeros en este apartado")
-                            else:
-                                exepcion = True
-                        pizza=Pizza(id_pizza,produc,preci,cantidad)
-                        modi_pizza.agregar_pizza(pizza)
-                        print("Se ha guardado exitosamente la pizza")
-                    elif opcion_agregar=="2":
-                        id_bebida = id_bebida + 1
-                        produc = input("Que clase de bebida quiere agregar: ")
-                        exepcion = False
-                        while not exepcion:
-                            try:
-                                preci = int(input("Que precio va a tener la bebida: "))
-                            except ValueError:
-                                print("Solo pueden ir numeros en este apartado")
-                            else:
-                                exepcion = True
-                        exepcion = False
-                        while not exepcion:
-                            try:
-                                cantidad = int(input("Que cantidad tendra: "))
-                            except ValueError:
-                                print("Solo pueden ir numeros en este apartado")
-                            else:
-                                exepcion = True
-                        bebida = Bebidas(id_bebida, produc, preci, cantidad)
-                        modi_bebida.agregar_bebida(bebida)
-                        print("Se ha guardado exitosamente la bebida")
-                    elif opcion_agregar=="3":
-                        id_complemento = id_complemento + 1
-                        produc = input("Que clase de complemento quiere agregar: ")
-                        exepcion = False
-                        while not exepcion:
-                            try:
-                                preci = int(input("Que precio va a tener el complemento: "))
-                            except ValueError:
-                                print("Solo pueden ir numeros en este apartado")
-                            else:
-                                exepcion = True
-                        exepcion = False
-                        while not exepcion:
-                            try:
-                                cantidad = int(input("Que cantidad tendra: "))
-                            except ValueError:
-                                print("Solo pueden ir numeros en este apartado")
-                            else:
-                                exepcion = True
-                        complemento = Complementos(id_complemento, produc, preci, cantidad)
-                        modi_complemento.agregar_complemento(complemento)
-                        print("Se ha guardado exitosamente el complemento")
-                    else:
-                        print("Opcion invalida")
-                    desea_seguir_agregando=input("1. Si\n2. No\nDesea seguir agregando productos: ")
-                    while desea_seguir_agregando!="1" and desea_seguir_agregando!="2":
-                        desea_seguir_agregando = input("Opcion invalida\n1. Si\n2. No\n Desea seguir agregando productos: ")
-                    if desea_seguir_agregando=="2":
-                        seguir_agregando=True
-                else:
-                    print("Opcion no valida")
-            elif opcion=="2":
-                print("1. Pizzas\n2. Bebidas\n3. Complementos")
-                modificar=input("Que desea modificar: ")
-                if modificar == "1":
-                    for pizza in modi_pizza.pila_pizza:
-                        print(f"{pizza.id}. Producto: {pizza.producto}")
-                    exepcion = False
-                    while not exepcion:
-                        try:
-                            pizza_modificar = int(input("Que pizza quiere modificar: "))
-                        except ValueError:
-                            print("Opcion invalida, solo se permien numeros")
-                        else:
-                            exepcion = True
-                    for pizza in  modi_pizza.pila_pizza:
-                        if pizza_modificar==pizza.id:
+        contrasena=input("Ingrese la contraseña: ")
+        if contrasena=="1234":
+            print("Usted a ingresado como administrador")
+            while not Salir_Administrador:
+                print("1. Agregar productos\n2. Modificar productos\n3. Ver clientes guardos\n4. Salir")
+                opcion=input("Que desea escoger: ")
+                if opcion=="1":
+                    seguir_agregando=False
+                    while not seguir_agregando:
+                        print("Opciones a agregar:\n1. Pizza\n2. Bebidas\n3. Complementos")
+                        opcion_agregar=input("Que desea agregar: ")
+                        if opcion_agregar=="1":
+                            id_pizza=id_pizza+1
+                            produc=input("Que clase de pizza quiere agregar: ")
                             exepcion=False
                             while not exepcion:
                                 try:
-                                    pizza.precio=float(input("Que precio desea ponerle: "))
+                                    preci=int(input("Que precio va a tener la pizza: "))
                                 except ValueError:
-                                    print("Solo se permiten numeros")
+                                    print("Solo pueden ir numeros en este apartado")
                                 else:
                                     exepcion=True
                             exepcion = False
                             while not exepcion:
                                 try:
-                                    pizza.stock=int(input("Cuanto stock hay: "))
+                                    cantidad = int(input("Que cantidad tendra: "))
                                 except ValueError:
-                                    print("Solo se permiten numeros")
+                                    print("Solo pueden ir numeros en este apartado")
                                 else:
                                     exepcion = True
-                elif modificar == "2":
-                    for bebida in modi_bebida.pila_bebida:
-                        print(f"{bebida.id}. Producto: {bebida.producto}")
-                    exepcion = False
-                    while not exepcion:
-                        try:
-                            bebida_modificar = int(input("Que bebida quiere modificar: "))
-                        except ValueError:
-                            print("Opcion invalida, solo se permien numeros")
+                            pizza=Pizza(id_pizza,produc,preci,cantidad)
+                            modi_pizza.agregar_pizza(pizza)
+                            print("Se ha guardado exitosamente la pizza")
+                        elif opcion_agregar=="2":
+                            id_bebida = id_bebida + 1
+                            produc = input("Que clase de bebida quiere agregar: ")
+                            exepcion = False
+                            while not exepcion:
+                                try:
+                                    preci = int(input("Que precio va a tener la bebida: "))
+                                except ValueError:
+                                    print("Solo pueden ir numeros en este apartado")
+                                else:
+                                    exepcion = True
+                            exepcion = False
+                            while not exepcion:
+                                try:
+                                    cantidad = int(input("Que cantidad tendra: "))
+                                except ValueError:
+                                    print("Solo pueden ir numeros en este apartado")
+                                else:
+                                    exepcion = True
+                            bebida = Bebidas(id_bebida, produc, preci, cantidad)
+                            modi_bebida.agregar_bebida(bebida)
+                            print("Se ha guardado exitosamente la bebida")
+                        elif opcion_agregar=="3":
+                            id_complemento = id_complemento + 1
+                            produc = input("Que clase de complemento quiere agregar: ")
+                            exepcion = False
+                            while not exepcion:
+                                try:
+                                    preci = int(input("Que precio va a tener el complemento: "))
+                                except ValueError:
+                                    print("Solo pueden ir numeros en este apartado")
+                                else:
+                                    exepcion = True
+                            exepcion = False
+                            while not exepcion:
+                                try:
+                                    cantidad = int(input("Que cantidad tendra: "))
+                                except ValueError:
+                                    print("Solo pueden ir numeros en este apartado")
+                                else:
+                                    exepcion = True
+                            complemento = Complementos(id_complemento, produc, preci, cantidad)
+                            modi_complemento.agregar_complemento(complemento)
+                            print("Se ha guardado exitosamente el complemento")
                         else:
-                            exepcion = True
-                    for bebida in modi_bebida.pila_bebida:
-                        if bebida_modificar == bebida.id:
-                            exepcion = False
-                            while not exepcion:
-                                try:
-                                    bebida.precio = float(input("Que precio desea ponerle: "))
-                                except ValueError:
-                                    print("Solo se permiten numeros")
-                                else:
-                                    exepcion = True
-                            exepcion = False
-                            while not exepcion:
-                                try:
-                                    bebida.stock = int(input("Cuanto stock hay: "))
-                                except ValueError:
-                                    print("Solo se permiten numeros")
-                                else:
-                                    exepcion = True
-                elif modificar == "3":
-                    for complemento in modi_complemento.pila_complemento:
-                        print(f"{complemento.id}. Producto: {complemento.producto}")
-                    exepcion = False
-                    while not exepcion:
-                        try:
-                            complemento_modificar = int(input("Que complemento quiere modificar: "))
-                        except ValueError:
-                            print("Opcion invalida, solo se permien numeros")
-                        else:
-                            exepcion = True
-                    for complemento in modi_complemento.pila_complemento:
-                        if complemento_modificar == complemento.id:
-                            exepcion = False
-                            while not exepcion:
-                                try:
-                                    complemento.precio = float(input("Que precio desea ponerle: "))
-                                except ValueError:
-                                    print("Solo se permiten numeros")
-                                else:
-                                    exepcion = True
-                            exepcion = False
-                            while not exepcion:
-                                try:
-                                    complemento.stock = int(input("Cuanto stock hay: "))
-                                except ValueError:
-                                    print("Solo se permiten numeros")
-                                else:
-                                    exepcion = True
-            elif opcion=="3":
-                numeros_clientes=agre_cliente.lista_vacia()
-                if numeros_clientes==0:
-                    print("No hay clientes aun")
+                            print("Opcion invalida")
+                        desea_seguir_agregando=input("1. Si\n2. No\nDesea seguir agregando productos: ")
+                        while desea_seguir_agregando!="1" and desea_seguir_agregando!="2":
+                            desea_seguir_agregando = input("Opcion invalida\n1. Si\n2. No\n Desea seguir agregando productos: ")
+                        if desea_seguir_agregando=="2":
+                            seguir_agregando=True
+                    else:
+                        print("Opcion no valida")
+                elif opcion=="2":
+                    print("1. Pizzas\n2. Bebidas\n3. Complementos")
+                    modificar=input("Que desea modificar: ")
+                    if modificar == "1":
+                        for pizza in modi_pizza.pila_pizza:
+                            print(f"{pizza.id}. Producto: {pizza.producto}")
+                        exepcion = False
+                        while not exepcion:
+                            try:
+                                pizza_modificar = int(input("Que pizza quiere modificar: "))
+                            except ValueError:
+                                print("Opcion invalida, solo se permien numeros")
+                            else:
+                                exepcion = True
+                        for pizza in  modi_pizza.pila_pizza:
+                            if pizza_modificar==pizza.id:
+                                exepcion=False
+                                while not exepcion:
+                                    try:
+                                        pizza.precio=float(input("Que precio desea ponerle: "))
+                                    except ValueError:
+                                        print("Solo se permiten numeros")
+                                    else:
+                                        exepcion=True
+                                exepcion = False
+                                while not exepcion:
+                                    try:
+                                        pizza.stock=int(input("Cuanto stock hay: "))
+                                    except ValueError:
+                                        print("Solo se permiten numeros")
+                                    else:
+                                        exepcion = True
+                    elif modificar == "2":
+                        for bebida in modi_bebida.pila_bebida:
+                            print(f"{bebida.id}. Producto: {bebida.producto}")
+                        exepcion = False
+                        while not exepcion:
+                            try:
+                                bebida_modificar = int(input("Que bebida quiere modificar: "))
+                            except ValueError:
+                                print("Opcion invalida, solo se permien numeros")
+                            else:
+                                exepcion = True
+                        for bebida in modi_bebida.pila_bebida:
+                            if bebida_modificar == bebida.id:
+                                exepcion = False
+                                while not exepcion:
+                                    try:
+                                        bebida.precio = float(input("Que precio desea ponerle: "))
+                                    except ValueError:
+                                        print("Solo se permiten numeros")
+                                    else:
+                                        exepcion = True
+                                exepcion = False
+                                while not exepcion:
+                                    try:
+                                        bebida.stock = int(input("Cuanto stock hay: "))
+                                    except ValueError:
+                                        print("Solo se permiten numeros")
+                                    else:
+                                        exepcion = True
+                    elif modificar == "3":
+                        for complemento in modi_complemento.pila_complemento:
+                            print(f"{complemento.id}. Producto: {complemento.producto}")
+                        exepcion = False
+                        while not exepcion:
+                            try:
+                                complemento_modificar = int(input("Que complemento quiere modificar: "))
+                            except ValueError:
+                                print("Opcion invalida, solo se permien numeros")
+                            else:
+                                exepcion = True
+                        for complemento in modi_complemento.pila_complemento:
+                            if complemento_modificar == complemento.id:
+                                exepcion = False
+                                while not exepcion:
+                                    try:
+                                        complemento.precio = float(input("Que precio desea ponerle: "))
+                                    except ValueError:
+                                        print("Solo se permiten numeros")
+                                    else:
+                                        exepcion = True
+                                exepcion = False
+                                while not exepcion:
+                                    try:
+                                        complemento.stock = int(input("Cuanto stock hay: "))
+                                    except ValueError:
+                                        print("Solo se permiten numeros")
+                                    else:
+                                        exepcion = True
+                elif opcion=="3":
+                    numeros_clientes=agre_cliente.lista_vacia()
+                    if numeros_clientes==0:
+                        print("No hay clientes aun")
+                    else:
+                        agre_cliente.mostrar()
+                elif opcion=="4":
+                    print("Saliendo al menu principal...")
+                    Salir_Administrador=True
                 else:
-                    agre_cliente.mostrar()
-            elif opcion=="4":
-                print("Saliendo al menu principal...")
-                Salir_Administrador=True
-            else:
-                print("Opcion no valida")
-        
+                    print("Opcion no valida")
+        else:
+            print("Contraseña incorrecta")
+
+
     elif usuario=="2":
         while not Salir_Usuario:
             print("--Interfaz--")
