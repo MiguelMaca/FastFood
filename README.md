@@ -1,5 +1,6 @@
 # FastFood
 
+![Uploading image.png…]()
 
 
 En el proyecto de programación que se va a presentar, se desarrollará una aplicación de consola para una empresa de comida rápida.
