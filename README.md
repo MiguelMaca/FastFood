@@ -1,6 +1,6 @@
 # FastFood
 
-![Imagen de la Pizzeria](https://www.reddit.com/r/drugscirclejerk/comments/17tpzxw/first_day_at_the_job_they_finna_going_to_promote/)
+[WhatsApp Image 2023-11-10 at 1.34.33 AM.jpeg](https://raw.githubusercontent.com/MiguelMaca/FastFood/main/ruta/al/asset)
 
 
 En el proyecto de programación que se va a presentar, se desarrollará una aplicación de consola para una empresa de comida rápida.
