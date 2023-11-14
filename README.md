@@ -1,6 +1,6 @@
 # FastFood
 
-![Uploading image.png…]()
+https://www.instagram.com/p/Czcx9EQuly9/
 
 
 En el proyecto de programación que se va a presentar, se desarrollará una aplicación de consola para una empresa de comida rápida.
