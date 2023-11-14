@@ -1,6 +1,6 @@
 # FastFood
 
-[Imagen Pizzeria](https://raw.githubusercontent.com/MiguelMaca/FastFood/main/ruta/assets/dominos.png)
+[Imagen Pizzeria](https://static.wikia.nocookie.net/28731ee7-ed2d-49fa-a6f1-b5660eaee7a3)
 
 
 En el proyecto de programación que se va a presentar, se desarrollará una aplicación de consola para una empresa de comida rápida.
