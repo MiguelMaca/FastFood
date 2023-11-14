@@ -1,6 +1,6 @@
 # FastFood
 
-[WhatsApp Image 2023-11-10 at 1.34.33 AM.jpeg](https://raw.githubusercontent.com/MiguelMaca/FastFood/main/ruta/assets/dominos.png)
+[Imagen Pizzeria](https://raw.githubusercontent.com/MiguelMaca/FastFood/main/ruta/assets/dominos.png)
 
 
 En el proyecto de programación que se va a presentar, se desarrollará una aplicación de consola para una empresa de comida rápida.
