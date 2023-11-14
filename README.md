@@ -1,6 +1,6 @@
 # FastFood
 
-![Imagen del Pizzeria](https://www.facebook.com/photo/?fbid=888166935997761&set=a.586401692840955)
+![Imagen de la Pizzeria](https://www.reddit.com/r/drugscirclejerk/comments/17tpzxw/first_day_at_the_job_they_finna_going_to_promote/)
 
 
 En el proyecto de programación que se va a presentar, se desarrollará una aplicación de consola para una empresa de comida rápida.
