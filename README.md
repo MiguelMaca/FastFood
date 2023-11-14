@@ -1,6 +1,6 @@
 # FastFood
 
-![Imagen del Pizzeria](https://www.facebook.com/recetasdeliciosas2022/)
+![Imagen del Pizzeria](https://www.facebook.com/photo/?fbid=888166935997761&set=a.586401692840955)
 
 
 En el proyecto de programación que se va a presentar, se desarrollará una aplicación de consola para una empresa de comida rápida.
